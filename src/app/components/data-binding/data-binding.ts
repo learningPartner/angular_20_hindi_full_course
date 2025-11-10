@@ -1,15 +1,20 @@
+import { DatePipe, JsonPipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NaPipe } from '../../pipes/na-pipe';
 
 @Component({
   selector: 'app-data-binding',
-  imports: [FormsModule],
+  imports: [FormsModule,UpperCasePipe,LowerCasePipe,TitleCasePipe
+    ,SlicePipe,DatePipe, JsonPipe, NaPipe
+  ],
   templateUrl: './data-binding.html',
   styleUrl: './data-binding.css'
 })
 export class DataBinding {
   //string , number, booelan, date 
-  courseName: string = "Angular 20";
+  courseName: string = "angular 20 autorial";
+  rollNoList: number []= [11,12,13,14,15,16,17,18];
 
   isActive: boolean= false;
   currentDate: Date = new Date();
@@ -17,13 +22,28 @@ export class DataBinding {
   rollNo: number =  222;
 
   minTestLength  = 12;
-  spanClassName = 'secondary'
+  spanClassName = 'secondary';
+
+  studentObj: any = {
+    name:'Chetan', 
+    state: '',
+    contact: {
+      pContactNo: null,
+      email:'chetan@gmaiol.cpom'
+    }
+  }
 
 
   constructor() {
     console.log(this.courseName);
+    setTimeout(() => {
+      this.currentDate = new Date();
+    }, 5000);
 
-    this.courseName = "Angular 20 Tutorial";
+    setTimeout(() => {
+      this.studentObj.city = "Mumbai"
+    }, 10000);
+    //this.courseName = "Angular 20 Tutorial";
     console.log(this.courseName);
 
     setTimeout(() => {

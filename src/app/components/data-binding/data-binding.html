@@ -1,4 +1,4 @@
-<div (scroll)="onWindowSizeChange()" >
+<div (scroll)="onWindowSizeChange()">
 
 
     <table style="width: 100%;">
@@ -57,4 +57,80 @@
             </td>
         </tr>
     </table>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        uppercase => {{courseName | uppercase}}
+    </div>
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        lowercase => {{courseName | lowercase}}
+    </div>
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        titlecase => {{courseName | titlecase}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        rollNoList -=> {{rollNoList}}
+    </div>
+     <div class="col-3">
+        slice -=> {{rollNoList | slice:0:4}}
+    </div>
+     <div class="col-3">
+        slice -=> {{rollNoList | slice:2}}
+    </div>
+    <div class="col-3">
+        slice -=> {{spanClassName | slice:0:2}}
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        currentDate -=> {{currentDate}}
+    </div>
+     <div class="col-3">
+        date -=> {{currentDate |date}}
+    </div>
+     <div class="col-3">
+         dd-MM-yy -=> {{currentDate | date:'dd-MM-yy'}}
+        <br>
+        dd-MMM-yy -=> {{currentDate | date:'dd-MMM-yy'}}
+        <br>
+         dd-MMMM-yy -=> {{currentDate | date:'dd-MMMM-yyyy'}}
+         <br>
+         dd-MMMM-yy -=> {{currentDate | date:'dd/MMMM/yyyy'}}
+    </div>
+    <div class="col-3">
+        time -=> {{currentDate | date:'HH:MM'}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        studentObj => {{studentObj}}
+    </div>
+    <div class="col-3">
+        studentObj => {{studentObj | json}}
+    </div>
+    <div class="col-3">
+       name: {{studentObj.name}}
+       <br>
+         city: {{studentObj.city |na}}
+       <br>
+         state: {{studentObj.state }}
+       <br>
+         pContactNo: {{studentObj.contact.pContactNo }}
+       <br>
+         email: {{studentObj.contact.email}}
+       <br>
+    </div>
 </div>
